@@ -2,7 +2,7 @@
 
 This project is a reboil, sites could be reached at
 
-or
+https://github.com/valientjuno/Section_Final-remaster
 
 <!-- routes follow as is -->
 
