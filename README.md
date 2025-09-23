@@ -13,5 +13,6 @@ https://github.com/valientjuno/Section_Final-remaster
 /createStudent
 /deleteStudent
 /myRoute
-
+/addCourseToStudent
+/getCourseByStudent
 Enjoy!
