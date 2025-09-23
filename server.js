@@ -8,13 +8,14 @@ const app = express();
 const PORT = process.env.PORT || 3007;
 
 app
-  .use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument))
   .use(cors())
   .use(express.json())
   .use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
     next();
   })
+  .use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument))
+
   .use("/", require("./routes"));
 
 mongodb.initDb((err) => {

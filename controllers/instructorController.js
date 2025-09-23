@@ -17,13 +17,13 @@ const getCourseByInstructor = async (req, res) => {
       .collection("instructor")
       .findOne({ _id: new ObjectId(instructorId) });
 
-    if (!instructors) {
+    if (!instructor) {
       return res.status(404).json({ message: "Instructor not found" });
     }
 
     // Return only the course IDs array
     res.setHeader("Content-Type", "application/json");
-    res.status(200).json(instructors.courses || []);
+    res.status(200).json(instructor.courses || []);
   } catch (error) {
     res.status(500).json(error);
   }
