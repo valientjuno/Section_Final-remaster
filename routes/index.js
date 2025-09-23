@@ -9,6 +9,8 @@ routes.use("/students", require("./students"));
 
 routes.use("/auth", require("./auth"));
 
+routes.use("/", require("./courses"));
+
 routes.use("/myRoute", myController.myRoute);
 
 module.exports = routes;
