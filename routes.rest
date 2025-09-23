@@ -30,8 +30,7 @@ Content-Type: application/json
 
 ###Get all courses
 GET http://localhost:3007/
-### get all Courses 
-GET http://localhost:3007/localhost:3007/getAllCourses HTTP/1.1
 
 
-### GET course by student
+
+
