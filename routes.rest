@@ -34,3 +34,6 @@ GET http://localhost:3007/
 
 
 
+###GET instructor       
+
+GET http://localhost:3007/instructor

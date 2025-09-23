@@ -3,13 +3,6 @@ const { response } = require("express");
 const mongodb = require("../db/connect");
 const ObjectId = require("mongodb").ObjectId;
 
-const awesomeFunction = (Req, res) => {
-  res.send("Hello World!");
-};
-
-const tooeleTech = (Req, res) => {
-  res.send("Tooele Tech is Awesome!");
-};
 // GET courses by student
 const getCourseByStudent = async (req, res) => {
   try {
@@ -71,7 +64,6 @@ const getAllStudents = async (req, res) => {
   }
 };
 
-// GET single instrctor
 const getSingleStudent = async (req, res) => {
   try {
     const userId = new ObjectId(req.params.id);
@@ -145,18 +137,12 @@ const deleteStudent = async (req, res) => {
 };
 
 // custom page stealth
-const myRoute = (Req, res) => {
-  res.send("Hey, Howdy. Welcome to my route page!");
-};
 
 module.exports = {
-  awesomeFunction,
-  tooeleTech,
   getAllStudents,
   getSingleStudent,
   createStudent,
   deleteStudent,
-  myRoute,
   addCourseToStudent,
   getCourseByStudent,
 };

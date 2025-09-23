@@ -6,13 +6,17 @@ https://github.com/valientjuno/Section_Final-remaster
 
 <!-- routes follow as is -->
 
-/awesomeFunction
-/tooeleTech
+getCourseByInstructor,
+addCourseToInstructor,
+getSingleInstructor,
+
+/getAllCourses
+
 /getAllStudents
 /getSingleStudent
 /createStudent
 /deleteStudent
-/myRoute
 /addCourseToStudent
 /getCourseByStudent
+
 Enjoy!

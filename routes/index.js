@@ -2,15 +2,12 @@ const routes = require("express").Router();
 const { required } = require("nodemon/lib/config");
 const myController = require("../controllers/index");
 
-routes.get("/", myController.awesomeFunction);
-routes.get("/ttech", myController.tooeleTech);
-
 routes.use("/students", require("./students"));
 
 routes.use("/auth", require("./auth"));
 
-routes.use("/", require("./courses"));
+routes.use("/course", require("./courses"));
 
-routes.use("/myRoute", myController.myRoute);
+routes.use("/instructor", require("./instructors"));
 
 module.exports = routes;
