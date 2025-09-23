@@ -1,7 +1,4 @@
 const routes = require("express").Router();
-const { required } = require("nodemon/lib/config");
-const myController = require("../controllers/index");
-
 routes.use("/students", require("./students"));
 
 routes.use("/auth", require("./auth"));
