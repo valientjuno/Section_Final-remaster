@@ -10,6 +10,53 @@ const awesomeFunction = (Req, res) => {
 const tooeleTech = (Req, res) => {
   res.send("Tooele Tech is Awesome!");
 };
+// GET courses by student
+const getCourseByStudent = async (req, res) => {
+  try {
+    const studentId = req.params.id;
+
+    // Find the student
+    const student = await mongodb
+      .getDb()
+      .db()
+      .collection("students")
+      .findOne({ _id: new ObjectId(studentId) });
+
+    if (!student) {
+      return res.status(404).json({ message: "Student not found" });
+    }
+
+    // Return only the course IDs array
+    res.setHeader("Content-Type", "application/json");
+    res.status(200).json(student.courses || []);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+};
+
+const addCourseToStudent = async (req, res) => {
+  try {
+    const studentId = req.params.id; // student id from URL
+    const { courseId } = req.body;
+    console.log(courseId);
+    const result = await mongodb
+      .getDb()
+      .db()
+      .collection("students")
+      .updateOne(
+        { _id: new ObjectId(studentId) },
+        { $push: { courses: courseId } }
+      );
+
+    if (result.modifiedCount > 0) {
+      res.status(200).json({ message: "Course added to student" });
+    } else {
+      res.status(404).json({ message: "Student not found" });
+    }
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
 
 // GET All Students
 const getAllStudents = async (req, res) => {
@@ -24,7 +71,7 @@ const getAllStudents = async (req, res) => {
   }
 };
 
-// GET single student
+// GET single instrctor
 const getSingleStudent = async (req, res) => {
   try {
     const userId = new ObjectId(req.params.id);
@@ -110,4 +157,6 @@ module.exports = {
   createStudent,
   deleteStudent,
   myRoute,
+  addCourseToStudent,
+  getCourseByStudent,
 };
