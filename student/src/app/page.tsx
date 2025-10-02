@@ -26,7 +26,7 @@ const StudentPage = () => {
       throw new Error("Failed to Delete Student");
     }
   };
-  // submit studsent (add or update)
+  // submit student (add or update)
 
   // delete student by id
 

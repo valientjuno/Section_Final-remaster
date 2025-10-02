@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "localhost:3001";
+const API_URL = "http://localhost:3007/students";
 
 interface Student {
   _id: string;
@@ -22,12 +22,12 @@ async function fetchStudents(): Promise<Student[]> {
   }
 }
 
-// Delte a Student
+// Delete a Student
 async function deleteStudent(id: string): Promise<void> {
   try {
     await axios.delete(`${API_URL}/students/.${id}`);
   } catch (error) {
-    console.log("Error Deleting students: ", error);
+    console.log("Error Deleting student: ", error);
     throw new Error("Failed to delete student");
   }
 }
