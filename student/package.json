@@ -1,9 +1,7 @@
 {
-<<<<<<<< HEAD:my-project/package.json
-  "name": "my-project",
-========
-  "name": "student",
->>>>>>>> nextJS:student/package.json
+
+"name": "student",
+
   "version": "0.1.0",
   "private": true,
   "scripts": {
